@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gyakori kérdések — WebLift Studio</title>
+<link rel="canonical" href="https://webliftstudio.net/gyik.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e1a; --surface:#10182b; --surface-2:#151f38; --border:#232f4d;
+    --blue:#4F6EF7; --violet:#9B4FF7; --cyan:#3FDCF7;
+    --text:#F5F6FA; --text-soft:#9AA3B8; --text-faint:#5C6480;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;position:relative;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Sora',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .grad-text{background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .grad-btn{background:linear-gradient(90deg,var(--blue),var(--violet));transition:transform .2s ease, box-shadow .2s ease;}
+  .grad-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px -8px rgba(79,110,247,.5);}
+  .nav-link{color:var(--text-soft);transition:color .2s;}
+  .nav-link:hover{color:var(--text);}
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+
+  .cat-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--violet);text-transform:uppercase;margin:44px 0 14px;}
+  .cat-label:first-of-type{margin-top:0;}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 22px;transition:border-color .2s;}
+  .faq-item:hover{border-color:#3a4670;}
+  .faq-item summary{cursor:pointer;font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+';font-size:20px;color:var(--text-faint);transition:transform .2s;flex-shrink:0;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{margin-top:12px;font-size:14px;color:var(--text-soft);line-height:1.6;}
+</style>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "760a0b795fdb4dddb48f09d417ac840e"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style="background:rgba(10,14,26,.75);border-bottom:1px solid var(--border);">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 display text-lg font-semibold">
+      <svg width="24" height="24" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="navLogoGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4F6EF7"/><stop offset="100%" stop-color="#9B4FF7"/></linearGradient></defs>
+        <g transform="translate(38,38)">
+          <rect x="10" y="72" width="30" height="52" rx="9" fill="url(#navLogoGrad)"/>
+          <rect x="55" y="45" width="30" height="79" rx="9" fill="url(#navLogoGrad)"/>
+          <rect x="100" y="10" width="30" height="114" rx="9" fill="url(#navLogoGrad)"/>
+        </g>
+      </svg>
+      <span>Web<span class="grad-text">Lift</span> Studio</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="index.html#rolam" class="nav-link">Rólam</a>
+      <a href="index.html#elonyok" class="nav-link">Miért én</a>
+      <a href="index.html#folyamat" class="nav-link">Folyamat</a>
+      <a href="arak.html" class="nav-link">Árak</a>
+      <a href="index.html#referencia" class="nav-link">Referencia</a>
+      <a href="gyik.html" class="nav-link" style="color:var(--text);">GYIK</a>
+      <a href="index.html#kapcsolat" class="grad-btn text-white px-4 py-2 rounded-lg font-medium">Ajánlatkérés</a>
+    </nav>
+    <a href="index.html" class="md:hidden text-sm nav-link">← Kezdőlap</a>
+  </div>
+</header>
+
+<main class="relative pt-36 pb-24 px-5 sm:px-8">
+  <div class="bg-glow" style="top:-100px;right:-150px;width:400px;height:400px;background:radial-gradient(circle, rgba(155,79,247,.16), transparent 70%);"></div>
+
+  <div class="max-w-2xl mx-auto relative">
+    <span class="mono text-xs" style="color:var(--cyan);">GYIK</span>
+    <h1 class="text-3xl sm:text-4xl font-semibold mt-3 mb-3">Gyakori kérdések</h1>
+    <p class="text-base mb-4" style="color:var(--text-soft);">Amit érdemes tudni, mielőtt belevág.</p>
+
+    <p class="cat-label">FOLYAMAT</p>
+    <div class="grid gap-3">
+      <details class="faq-item" open>
+        <summary>Hogyan zajlik az együttműködés az elejétől a végéig?</summary>
+        <p>Egy ingyenes konzultációval kezdünk, ahol megismerem a vállalkozását és az elképzeléseit. Utána javaslok egy csomagot, megtervezem az oldalt, majd közösen finomítjuk, amíg elégedett nem lesz — a végén publikálom is.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Mennyi idő alatt készül el az oldalam?</summary>
+        <p>A jóváhagyott terv után jellemzően néhány munkanap, a csomag terjedelmétől függően. Pontos határidőt a konzultáción adok.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Mi van, ha nem tetszik az első verzió?</summary>
+        <p>Az Alap csomag 1, a Közepes csomag 2, a Prémium csomag pedig 3 ingyenes módosítási kört tartalmaz — ezekben együtt igazítjuk a designt és a szöveget, amíg elégedett nem lesz.</p>
+      </details>
+    </div>
+
+    <p class="cat-label">ÁRAZÁS</p>
+    <div class="grid gap-3">
+      <details class="faq-item">
+        <summary>Mennyibe kerül egy weboldal?</summary>
+        <p>Három csomag közül választhat, 59 990 Ft-tól — a pontos részleteket az <a href="arak.html" style="color:var(--cyan);">Árak oldalon</a> találja. Az ingyenes konzultáción segítek eldönteni, melyik illik az Ön vállalkozásához.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Van havi díj vagy előfizetés?</summary>
+        <p>Nincs. Az oldal elkészülte után az Öné, nincs kötelező havi költség.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Hogyan zajlik a fizetés?</summary>
+        <p>A jóváhagyott terv után kérek előleget, a fennmaradó összeg pedig az élesítéskor esedékes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Mi van, ha később bővíteni vagy módosítani szeretném az oldalt?</summary>
+        <p>Az átadás után is elérhető vagyok — utólagos, nagyobb módosítás vagy bővítés esetén egyedi árajánlatot adok. Nincs kötelező havi karbantartási díj, csak akkor fizet, ha ténylegesen szeretne valamit változtatni.</p>
+      </details>
+    </div>
+
+    <p class="cat-label">TECHNIKAI KÉRDÉSEK</p>
+    <div class="grid gap-3">
+      <details class="faq-item">
+        <summary>Kell hozzá saját domain vagy tárhely?</summary>
+        <p>Nem, ha még nincs — közösen beállítjuk, mindig az Ön nevén, én csak segítek a folyamatban. Ha már van saját domainje, azt is tudjuk használni.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Mobilbarát lesz az oldalam?</summary>
+        <p>Igen, minden oldal mobilra is optimalizálva készül — a látogatói jelentős része telefonról nézi majd meg.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Én magam is tudom majd később szerkeszteni az oldalt?</summary>
+        <p>Ez a csomagtól és az igényeitől függ — beszéljük át a konzultáción, hogy Önnek mennyire fontos az önálló szerkesztés lehetősége.</p>
+      </details>
+    </div>
+
+    <div class="text-center mt-16">
+      <p class="text-sm mb-4" style="color:var(--text-faint);">Nem találta a választ a kérdésére?</p>
+      <a href="index.html#kapcsolat" class="grad-btn inline-block text-white px-6 py-3 rounded-lg font-medium">Kérdezzen közvetlenül</a>
+    </div>
+  </div>
+</main>
+
+<footer class="py-8 px-5 sm:px-8 text-center text-sm" style="border-top:1px solid var(--border);color:var(--text-faint);">
+  WebLift Studio © 2026 — Modern weboldal a vállalkozásának
+</footer>
+
+</body>
+</html>
