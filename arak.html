@@ -116,77 +116,93 @@
   <div class="bg-glow" style="top:-100px;left:-150px;width:400px;height:400px;background:radial-gradient(circle, rgba(79,110,247,.16), transparent 70%);"></div>
 
   <div class="max-w-5xl mx-auto relative">
-    <span class="mono text-xs" style="color:var(--cyan);">ÁRAK</span>
-    <h1 class="text-3xl sm:text-4xl font-semibold mt-3 mb-3">Átlátható, egyszerű árazás</h1>
-    <p class="text-base mb-12" style="color:var(--text-soft);max-width:560px;">Nincs rejtett költség, nincs kötelező havi előfizetés. Válassza ki, mennyit szeretne rám bízni — a többit egy ingyenes beszélgetéssel kezdjük.</p>
+    <span class="mono text-xs" id="cms-label" style="color:var(--cyan);">ÁRAK</span>
+    <h1 class="text-3xl sm:text-4xl font-semibold mt-3 mb-3" id="cms-heading">Átlátható, egyszerű árazás</h1>
+    <p class="text-base mb-12" id="cms-intro" style="color:var(--text-soft);max-width:560px;">Nincs rejtett költség, nincs kötelező havi előfizetés. Válassza ki, mennyit szeretne rám bízni — a többit egy ingyenes beszélgetéssel kezdjük.</p>
 
     <!-- Ingyenes konzultáció -->
     <div class="card p-7 mb-8 sm:flex items-center justify-between gap-6" style="border-color:var(--cyan);">
       <div>
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-3" style="background:rgba(63,220,247,.12);color:var(--cyan);">ELSŐ LÉPÉS</span>
-        <h2 class="text-xl font-medium mb-2">Ingyenes konzultáció</h2>
-        <p class="text-sm" style="color:var(--text-soft);max-width:480px;">Elmondja, milyen vállalkozásról van szó, és mit szeretne — én pedig javaslatot teszek, melyik csomag illik hozzá. Semmilyen kötelezettség nincs.</p>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-3" id="cms-konzultacio_badge" style="background:rgba(63,220,247,.12);color:var(--cyan);">ELSŐ LÉPÉS</span>
+        <h2 class="text-xl font-medium mb-2" id="cms-konzultacio_heading">Ingyenes konzultáció</h2>
+        <p class="text-sm" id="cms-konzultacio_desc" style="color:var(--text-soft);max-width:480px;">Elmondja, milyen vállalkozásról van szó, és mit szeretne — én pedig javaslatot teszek, melyik csomag illik hozzá. Semmilyen kötelezettség nincs.</p>
       </div>
       <div class="mt-5 sm:mt-0 text-center shrink-0">
-        <p class="text-3xl font-semibold">0 Ft</p>
-        <a href="index.html#kapcsolat" class="grad-btn inline-block text-white px-5 py-2.5 rounded-lg text-sm font-medium mt-3">Időpontot kérek</a>
+        <p class="text-3xl font-semibold" id="cms-konzultacio_price">0 Ft</p>
+        <a href="index.html#kapcsolat" class="grad-btn inline-block text-white px-5 py-2.5 rounded-lg text-sm font-medium mt-3" id="cms-konzultacio_btn">Időpontot kérek</a>
       </div>
     </div>
 
     <!-- 3 csomag -->
     <div class="grid md:grid-cols-3 gap-6" style="perspective:1000px;">
       <div class="card tile p-7">
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" style="background:var(--surface-2);color:var(--text-soft);">ALAP</span>
-        <p class="text-3xl font-semibold mb-1">59 990 Ft</p>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" id="cms-alap_badge" style="background:var(--surface-2);color:var(--text-soft);">ALAP</span>
+        <p class="text-3xl font-semibold mb-1" id="cms-alap_price">59 990 Ft</p>
         <p class="text-sm mb-6" style="color:var(--text-soft);">egyszeri díj</p>
         <ul class="space-y-3 text-sm mb-6" style="color:var(--text-soft);">
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Egyszerű landing page, kész elképzelés alapján</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Mobilbarát, gyors betöltésű oldal</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> 1 ingyenes módosítási kör</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Segítség a publikálásban</li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-alap_feature1">Egyszerű landing page, kész elképzelés alapján</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-alap_feature2">Mobilbarát, gyors betöltésű oldal</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-alap_feature3">1 ingyenes módosítási kör</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-alap_feature4">Segítség a publikálásban</span></li>
         </ul>
-        <p class="text-xs" style="color:var(--text-faint);">Jó választás, ha már pontosan tudja, mit szeretne, csak meg kell valósítani.</p>
+        <p class="text-xs" id="cms-alap_note" style="color:var(--text-faint);">Jó választás, ha már pontosan tudja, mit szeretne, csak meg kell valósítani.</p>
       </div>
 
       <div class="card tile p-7" style="border-color:var(--blue);position:relative;">
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block absolute" style="top:-12px;right:20px;background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;">LEGNÉPSZERŰBB</span>
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" style="background:rgba(79,110,247,.12);color:var(--blue);">KÖZEPES</span>
-        <p class="text-3xl font-semibold mb-1">79 990 Ft</p>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block absolute" id="cms-kozepes_ribbon" style="top:-12px;right:20px;background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;">LEGNÉPSZERŰBB</span>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" id="cms-kozepes_badge" style="background:rgba(79,110,247,.12);color:var(--blue);">KÖZEPES</span>
+        <p class="text-3xl font-semibold mb-1" id="cms-kozepes_price">79 990 Ft</p>
         <p class="text-sm mb-6" style="color:var(--text-soft);">egyszeri díj</p>
         <ul class="space-y-3 text-sm mb-6" style="color:var(--text-soft);">
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Teljes egészében rám bízza a tervezést</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> A képektől a szövegig mindent összeállítok</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Egyedi, vállalkozásra szabott design</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Segítség a publikálásban</li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-kozepes_feature1">Teljes egészében rám bízza a tervezést</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-kozepes_feature2">A képektől a szövegig mindent összeállítok</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-kozepes_feature3">Egyedi, vállalkozásra szabott design</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-kozepes_feature4">Segítség a publikálásban</span></li>
         </ul>
-        <p class="text-xs" style="color:var(--text-faint);">A legtöbb kisvállalkozásnak ez a legjobb választás — nincs vele teendője, amíg el nem készül.</p>
+        <p class="text-xs" id="cms-kozepes_note" style="color:var(--text-faint);">A legtöbb kisvállalkozásnak ez a legjobb választás — nincs vele teendője, amíg el nem készül.</p>
       </div>
 
       <div class="card tile p-7" style="border-color:var(--violet);">
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" style="background:rgba(155,79,247,.12);color:var(--violet);">PRÉMIUM</span>
-        <p class="text-3xl font-semibold mb-1">99 990 Ft</p>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-4" id="cms-premium_badge" style="background:rgba(155,79,247,.12);color:var(--violet);">PRÉMIUM</span>
+        <p class="text-3xl font-semibold mb-1" id="cms-premium_price">99 990 Ft</p>
         <p class="text-sm mb-6" style="color:var(--text-soft);">egyszeri díj</p>
         <ul class="space-y-3 text-sm mb-6" style="color:var(--text-soft);">
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Minden, ami a Közepes csomagban</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Nem csak landing page — beépített funkciók is</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Pl. kapcsolati űrlap, galéria, egyéb interaktív elemek</li>
-          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> Segítség a publikálásban</li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-premium_feature1">Minden, ami a Közepes csomagban</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-premium_feature2">Nem csak landing page — beépített funkciók is</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-premium_feature3">Pl. kapcsolati űrlap, galéria, egyéb interaktív elemek</span></li>
+          <li class="flex gap-2"><span style="color:var(--cyan);">✓</span> <span id="cms-premium_feature4">Segítség a publikálásban</span></li>
         </ul>
-        <p class="text-xs" style="color:var(--text-faint);">Akkor jó, ha a weboldalnak konkrét funkciót is el kell látnia, nem csak bemutatkoznia.</p>
+        <p class="text-xs" id="cms-premium_note" style="color:var(--text-faint);">Akkor jó, ha a weboldalnak konkrét funkciót is el kell látnia, nem csak bemutatkoznia.</p>
       </div>
     </div>
 
-    <p class="text-sm mt-10" style="color:var(--text-faint);">Nincs kötelező havi előfizetés vagy karbantartási díj — az oldal az Öné, azt csinál vele, amit szeretne.</p>
+    <p class="text-sm mt-10" id="cms-footnote" style="color:var(--text-faint);">Nincs kötelező havi előfizetés vagy karbantartási díj — az oldal az Öné, azt csinál vele, amit szeretne.</p>
 
     <div class="text-center mt-16">
-      <a href="index.html#kapcsolat" class="grad-btn inline-block text-white px-6 py-3 rounded-lg font-medium">Kérek ingyenes konzultációt</a>
+      <a href="index.html#kapcsolat" class="grad-btn inline-block text-white px-6 py-3 rounded-lg font-medium" id="cms-cta_btn">Kérek ingyenes konzultációt</a>
     </div>
   </div>
 </main>
 
 <footer class="py-8 px-5 sm:px-8 text-center text-sm" style="border-top:1px solid var(--border);color:var(--text-faint);">
-  WebLift Studio © 2026 — Modern weboldal a vállalkozásának
+  <span id="cms-footer_text">WebLift Studio © 2026 — Modern weboldal a vállalkozásának</span>
 </footer>
 
+<script>
+(async function loadCmsContent(){
+  try {
+    const res = await fetch('/content.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const all = await res.json();
+    const data = all.arak || {};
+    Object.keys(data).forEach(function(key){
+      const el = document.getElementById('cms-' + key);
+      if (el) el.textContent = data[key];
+    });
+  } catch (e) {
+    console.warn('CMS tartalom betöltése sikertelen, marad az alapértelmezett szöveg.', e);
+  }
+})();
+</script>
 </body>
 </html>

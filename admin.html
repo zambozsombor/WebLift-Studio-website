@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tartalom szerkesztése — WebLift Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e1a; --surface:#10182b; --surface-2:#151f38; --border:#232f4d;
+    --blue:#4F6EF7; --violet:#9B4FF7; --cyan:#3FDCF7;
+    --text:#F5F6FA; --text-soft:#9AA3B8; --text-faint:#5C6480;
+    --ok:#3FDCF7; --err:#ff6b6b;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;margin:0;padding:32px 16px 100px;}
+  h1,h2{font-family:'Sora',sans-serif;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;}
+  label{display:block;font-size:13px;color:var(--text-soft);margin-bottom:6px;margin-top:16px;}
+  label:first-child{margin-top:0;}
+  input[type=text], input[type=password], textarea{
+    width:100%;padding:10px 14px;border-radius:8px;background:var(--surface-2);
+    border:1px solid var(--border);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;
+  }
+  textarea{resize:vertical;min-height:56px;}
+  button{
+    background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;border:none;
+    padding:12px 26px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;
+  }
+  button:hover{opacity:.92;}
+  button:disabled{opacity:.5;cursor:not-allowed;}
+  .status{margin-top:14px;font-size:13px;}
+  .status.ok{color:var(--ok);}
+  .status.err{color:var(--err);}
+  #editor{display:none;}
+
+  .tabs{display:flex;gap:8px;margin-bottom:20px;position:sticky;top:16px;z-index:10;background:var(--bg);padding:8px 0;flex-wrap:wrap;}
+  .tab-btn{
+    background:var(--surface);border:1px solid var(--border);color:var(--text-soft);
+    padding:9px 18px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;
+  }
+  .tab-btn.active{background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;border-color:transparent;}
+  .page-section{display:none;}
+  .page-section.active{display:block;}
+
+  .field-label{
+    font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace;
+    text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;margin-top:16px;
+  }
+  .field-label:first-child{margin-top:0;}
+
+  .save-bar{
+    position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);
+    padding:16px;display:flex;justify-content:center;gap:16px;align-items:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tartalom szerkesztése</h1>
+  <p style="color:var(--text-soft);font-size:14px;margin-bottom:24px;">Itt módosíthatja a weboldal (Főoldal, Árak, GYIK) minden szövegét. A mentés után néhány percen belül élesben is frissül az oldal.</p>
+
+  <div class="card" id="login">
+    <label for="pw">Jelszó</label>
+    <input type="password" id="pw" placeholder="Add meg a jelszót">
+    <div style="margin-top:18px;"><button id="loginBtn">Belépés</button></div>
+    <p class="status err" id="loginStatus"></p>
+  </div>
+
+  <div id="editor">
+    <div class="tabs" id="tabs"></div>
+    <div id="pages"></div>
+  </div>
+</div>
+
+<div class="save-bar" id="saveBar" style="display:none;">
+  <button id="saveBtn">Mentés és publikálás</button>
+  <p class="status" id="saveStatus" style="margin:0;"></p>
+</div>
+
+<script>
+let PASSWORD = '';
+let CONTENT = {};
+
+function humanLabel(key){
+  return key.replace(/_/g, ' ').replace(/^\w/, c => c.toUpperCase());
+}
+
+function isLongField(value){
+  return typeof value === 'string' && value.length > 60;
+}
+
+function renderEditor(content){
+  CONTENT = content;
+  const tabsEl = document.getElementById('tabs');
+  const pagesEl = document.getElementById('pages');
+  tabsEl.innerHTML = '';
+  pagesEl.innerHTML = '';
+
+  const pageNames = { index: 'Főoldal', arak: 'Árak', gyik: 'GYIK' };
+  const pageKeys = Object.keys(content);
+
+  pageKeys.forEach((pageKey, idx) => {
+    const tabBtn = document.createElement('button');
+    tabBtn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
+    tabBtn.textContent = pageNames[pageKey] || pageKey;
+    tabBtn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+      tabBtn.classList.add('active');
+      document.getElementById('page-' + pageKey).classList.add('active');
+    });
+    tabsEl.appendChild(tabBtn);
+
+    const section = document.createElement('div');
+    section.className = 'page-section' + (idx === 0 ? ' active' : '');
+    section.id = 'page-' + pageKey;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    Object.keys(content[pageKey]).forEach(fieldKey => {
+      const value = content[pageKey][fieldKey];
+      const lbl = document.createElement('div');
+      lbl.className = 'field-label';
+      lbl.textContent = humanLabel(fieldKey);
+      card.appendChild(lbl);
+
+      const inputEl = document.createElement(isLongField(value) ? 'textarea' : 'input');
+      if (inputEl.tagName === 'INPUT') inputEl.type = 'text';
+      inputEl.value = value;
+      inputEl.dataset.page = pageKey;
+      inputEl.dataset.field = fieldKey;
+      inputEl.id = 'field-' + pageKey + '-' + fieldKey;
+      card.appendChild(inputEl);
+    });
+
+    section.appendChild(card);
+    pagesEl.appendChild(section);
+  });
+}
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const pw = document.getElementById('pw').value;
+  const statusEl = document.getElementById('loginStatus');
+  statusEl.textContent = 'Betöltés...';
+  statusEl.className = 'status';
+  try {
+    const res = await fetch('/api/save-content', {
+      method: 'GET',
+      headers: { 'x-admin-password': pw }
+    });
+    if (!res.ok) {
+      statusEl.textContent = 'Hibás jelszó, vagy a szerver nincs beállítva.';
+      statusEl.className = 'status err';
+      return;
+    }
+    const data = await res.json();
+    PASSWORD = pw;
+    renderEditor(data);
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('editor').style.display = 'block';
+    document.getElementById('saveBar').style.display = 'flex';
+  } catch (e) {
+    statusEl.textContent = 'Hiba történt: ' + e.message;
+    statusEl.className = 'status err';
+  }
+});
+
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('saveBtn');
+  const statusEl = document.getElementById('saveStatus');
+
+  const updated = JSON.parse(JSON.stringify(CONTENT));
+  document.querySelectorAll('[data-page]').forEach(el => {
+    updated[el.dataset.page][el.dataset.field] = el.value;
+  });
+
+  btn.disabled = true;
+  statusEl.textContent = 'Mentés folyamatban...';
+  statusEl.className = 'status';
+
+  try {
+    const res = await fetch('/api/save-content', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-password': PASSWORD },
+      body: JSON.stringify(updated)
+    });
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(errText);
+    }
+    CONTENT = updated;
+    statusEl.textContent = 'Mentve! Az oldal néhány percen belül frissül.';
+    statusEl.className = 'status ok';
+  } catch (e) {
+    statusEl.textContent = 'Hiba a mentés közben: ' + e.message;
+    statusEl.className = 'status err';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

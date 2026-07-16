@@ -46,7 +46,7 @@
     --cyan:#3FDCF7;
     --text:#F5F6FA;
     --text-soft:#9AA3B8;
-    --text-faint:#828BA6;
+    --text-faint:#5C6480;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html{scroll-behavior:smooth;}
@@ -168,13 +168,13 @@
   <div class="max-w-6xl mx-auto relative scroll-slide">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-6" style="background:var(--surface-2);color:var(--cyan);border:1px solid var(--border);">AI-alapú webfejlesztés kisvállalkozásoknak</span>
+        <span class="mono text-xs px-3 py-1 rounded-full inline-block mb-6" id="cms-hero_badge" style="background:var(--surface-2);color:var(--cyan);border:1px solid var(--border);">AI-alapú webfejlesztés kisvállalkozásoknak</span>
         <h1 class="text-4xl sm:text-5xl font-semibold leading-tight mb-6">
-          Több ügyfél.<br>
-          Profibb megjelenés.<br>
-          <span class="grad-text">Gyorsabban és olcsóbban</span>, mint valaha.
+          <span id="cms-hero_line1">Több ügyfél.</span><br>
+          <span id="cms-hero_line2">Profibb megjelenés.</span><br>
+          <span class="grad-text" id="cms-hero_highlight">Gyorsabban és olcsóbban</span><span id="cms-hero_line3_rest">, mint valaha.</span>
         </h1>
-        <p class="text-base sm:text-lg mb-8" style="color:var(--text-soft);max-width:440px;">Modern weboldalt készítek helyi vállalkozásoknak — a tervezéstől a publikálásig mindent én intézek, Ön csak a végeredményt hagyja jóvá.</p>
+        <p class="text-base sm:text-lg mb-8" id="cms-hero_subtitle" style="color:var(--text-soft);max-width:440px;">Modern weboldalt készítek helyi vállalkozásoknak — a tervezéstől a publikálásig mindent én intézek, Ön csak a végeredményt hagyja jóvá.</p>
         <div class="flex flex-wrap gap-4">
           <a href="#kapcsolat" class="grad-btn text-white px-6 py-3 rounded-lg font-medium">Kérek ingyenes ajánlatot</a>
           <a href="#folyamat" class="px-6 py-3 rounded-lg font-medium" style="border:1px solid var(--border);color:var(--text);">Megnézem, hogyan dolgozom</a>
@@ -197,39 +197,39 @@
 <!-- ROLAM -->
 <section id="rolam" class="py-20 px-5 sm:px-8" style="background:rgba(10,14,26,.93);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="max-w-4xl mx-auto scroll-slide">
-    <span class="mono text-xs" style="color:var(--cyan);">RÓLAM</span>
-    <h2 class="text-3xl font-semibold mt-3 mb-6">Ki áll a szolgáltatás mögött?</h2>
-    <p class="text-base leading-relaxed mb-4" style="color:var(--text-soft);">18 éves vagyok, ősztől mérnökinformatikát tanulok a <span style="color:var(--text);">BME-n</span>. A weboldalkészítéshez egy saját, AI-alapú munkafolyamatot építettem, ami lerövidíti az utat az ötlettől a kész oldalig — napok, nem hetek.</p>
-    <p class="text-base leading-relaxed" style="color:var(--text-soft);">Fiatal vagyok, de ez épp azt jelenti, hogy naprakész eszközökkel dolgozom, és minden projektbe annyi energiát fektetek, amennyi egy saját referenciamunkába jár.</p>
+    <span class="mono text-xs" id="cms-rolam_label" style="color:var(--cyan);">RÓLAM</span>
+    <h2 class="text-3xl font-semibold mt-3 mb-6" id="cms-rolam_heading">Ki áll a szolgáltatás mögött?</h2>
+    <p class="text-base leading-relaxed mb-4" id="cms-rolam_p1" style="color:var(--text-soft);">18 éves vagyok, ősztől mérnökinformatikát tanulok a <span style="color:var(--text);">BME-n</span>. A weboldalkészítéshez egy saját, AI-alapú munkafolyamatot építettem, ami lerövidíti az utat az ötlettől a kész oldalig — napok, nem hetek.</p>
+    <p class="text-base leading-relaxed" id="cms-rolam_p2" style="color:var(--text-soft);">Fiatal vagyok, de ez épp azt jelenti, hogy naprakész eszközökkel dolgozom, és minden projektbe annyi energiát fektetek, amennyi egy saját referenciamunkába jár.</p>
   </div>
 </section>
 
 <!-- ELONYOK — 3D tilt cards -->
 <section id="elonyok" class="py-20 px-5 sm:px-8">
   <div class="max-w-6xl mx-auto scroll-slide">
-    <span class="mono text-xs" style="color:var(--cyan);">MIÉRT ÉN</span>
-    <h2 class="text-3xl font-semibold mt-3 mb-10">A szolgáltatás előnyei</h2>
+    <span class="mono text-xs" id="cms-elonyok_label" style="color:var(--cyan);">MIÉRT ÉN</span>
+    <h2 class="text-3xl font-semibold mt-3 mb-10" id="cms-elonyok_heading">A szolgáltatás előnyei</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="card tile p-7">
         <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-5" style="background:rgba(79,110,247,.12);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
         </div>
-        <h3 class="text-lg font-medium mb-2">3 nap, nem 3 hét</h3>
-        <p class="text-sm" style="color:var(--text-soft);">Amíg egy hagyományos fejlesztő csapat heteket tervez, az AI-alapú folyamatom napok alatt kész oldalt ad — ugyanazzal a gondossággal.</p>
+        <h3 class="text-lg font-medium mb-2" id="cms-elonyok_1_title">3 nap, nem 3 hét</h3>
+        <p class="text-sm" id="cms-elonyok_1_text" style="color:var(--text-soft);">Amíg egy hagyományos fejlesztő csapat heteket tervez, az AI-alapú folyamatom napok alatt kész oldalt ad — ugyanazzal a gondossággal.</p>
       </div>
       <div class="card tile p-7">
         <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-5" style="background:rgba(155,79,247,.12);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
         </div>
-        <h3 class="text-lg font-medium mb-2">Egy jóváhagyás, és kész</h3>
-        <p class="text-sm" style="color:var(--text-soft);">Domain, tárhely, publikálás — nem kell utánajárnia semminek. Ön jóváhagyja a tervet, én összerakok mindent.</p>
+        <h3 class="text-lg font-medium mb-2" id="cms-elonyok_2_title">Egy jóváhagyás, és kész</h3>
+        <p class="text-sm" id="cms-elonyok_2_text" style="color:var(--text-soft);">Domain, tárhely, publikálás — nem kell utánajárnia semminek. Ön jóváhagyja a tervet, én összerakok mindent.</p>
       </div>
       <div class="card tile p-7">
         <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-5" style="background:rgba(63,220,247,.12);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         </div>
-        <h3 class="text-lg font-medium mb-2">Az ár nem árulkodik a minőségről</h3>
-        <p class="text-sm" style="color:var(--text-soft);">Az AI-alapú munkafolyamat teszi lehetővé az alacsonyabb árat — a figyelem és a végeredmény semmiben nem marad el egy drágább megoldástól.</p>
+        <h3 class="text-lg font-medium mb-2" id="cms-elonyok_3_title">Az ár nem árulkodik a minőségről</h3>
+        <p class="text-sm" id="cms-elonyok_3_text" style="color:var(--text-soft);">Az AI-alapú munkafolyamat teszi lehetővé az alacsonyabb árat — a figyelem és a végeredmény semmiben nem marad el egy drágább megoldástól.</p>
       </div>
     </div>
   </div>
@@ -238,9 +238,9 @@
 <!-- REGI VS UJ — auto-cycling crossfade, prominent size -->
 <section id="regi-uj" class="py-20 px-5 sm:px-8" style="background:rgba(10,14,26,.93);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="max-w-2xl mx-auto scroll-slide text-center">
-    <span class="mono text-xs" style="color:var(--cyan);">LÁSSA A KÜLÖNBSÉGET</span>
-    <h2 class="text-3xl font-semibold mt-2 mb-3">Régi vs. új</h2>
-    <p class="text-sm mb-8" style="color:var(--text-faint);">Illusztratív példa egy tipikus elavult kisvállalkozói weboldalról — figyelje, ahogy átalakul.</p>
+    <span class="mono text-xs" id="cms-regiuj_label" style="color:var(--cyan);">LÁSSA A KÜLÖNBSÉGET</span>
+    <h2 class="text-3xl font-semibold mt-2 mb-3" id="cms-regiuj_heading">Régi vs. új</h2>
+    <p class="text-sm mb-8" id="cms-regiuj_intro" style="color:var(--text-faint);">Illusztratív példa egy tipikus elavult kisvállalkozói weboldalról — figyelje, ahogy átalakul.</p>
     <div class="browser-card" style="text-align:left;">
       <div class="browser-bar">
         <span class="bdot" style="background:#ff5f57;"></span><span class="bdot" style="background:#febc2e;"></span><span class="bdot" style="background:#28c840;"></span>
@@ -249,9 +249,9 @@
       <div style="position:relative;height:280px;">
         <div id="cycleNew" style="position:absolute;inset:0;padding:36px;display:flex;flex-direction:column;justify-content:center;background:#0d1117;transition:opacity .8s ease;">
           <span class="mono text-xs" style="color:var(--violet);letter-spacing:1px;">WEBLIFT — MODERN</span>
-          <h3 class="text-xl font-medium mt-3 mb-2" style="color:#fff;">Kovács Vendéglő</h3>
-          <p class="text-sm mb-5" style="color:#B5B9C2;max-width:340px;">Friss, otthonias ízek a város szívében. Foglaljon asztalt pár kattintással.</p>
-          <div class="grad-btn inline-flex self-start px-5 py-2.5 rounded-lg text-sm font-medium text-white">Asztalfoglalás</div>
+          <h3 class="text-xl font-medium mt-3 mb-2" id="cms-regiuj_demo_title" style="color:#fff;">Kovács Vendéglő</h3>
+          <p class="text-sm mb-5" id="cms-regiuj_demo_desc" style="color:#B5B9C2;max-width:340px;">Friss, otthonias ízek a város szívében. Foglaljon asztalt pár kattintással.</p>
+          <div class="grad-btn inline-flex self-start px-5 py-2.5 rounded-lg text-sm font-medium text-white" id="cms-regiuj_demo_btn">Asztalfoglalás</div>
         </div>
         <div id="cycleOld" style="position:absolute;inset:0;padding:28px;font-family:Georgia,serif;color:#333;background:#efece2;opacity:0;transition:opacity .8s ease;">
           <div style="background:#8b1a1a;color:#ffe9a8;text-align:center;padding:8px;font-size:13px;margin-bottom:14px;">*** ÜDVÖZÖLJÜK OLDALUNKON ***</div>
@@ -268,8 +268,8 @@
 <!-- FOLYAMAT — stepper bar -->
 <section id="folyamat" class="py-20 px-5 sm:px-8">
   <div class="max-w-2xl mx-auto scroll-slide">
-    <span class="mono text-xs" style="color:var(--cyan);">A FOLYAMAT</span>
-    <h2 class="text-3xl font-semibold mt-3 mb-10">Négy lépésben, az Ön igényei szerint</h2>
+    <span class="mono text-xs" id="cms-folyamat_label" style="color:var(--cyan);">A FOLYAMAT</span>
+    <h2 class="text-3xl font-semibold mt-3 mb-10" id="cms-folyamat_heading">Négy lépésben, az Ön igényei szerint</h2>
     <div class="stepper-bar" id="stepperBar">
       <button class="step-dot active" data-i="0"><span>01</span></button>
       <div class="step-line" data-i="0"></div>
@@ -280,7 +280,7 @@
       <button class="step-dot" data-i="3"><span>04</span></button>
     </div>
     <div class="flex justify-between text-xs mt-2 mb-6" style="color:var(--text-faint);">
-      <span>Egyeztetés</span><span>Tervezés</span><span>Fejlesztés</span><span>Átadás</span>
+      <span id="cms-folyamat_step1_short">Egyeztetés</span><span id="cms-folyamat_step2_short">Tervezés</span><span id="cms-folyamat_step3_short">Fejlesztés</span><span id="cms-folyamat_step4_short">Átadás</span>
     </div>
     <div class="card p-8" id="stepPanel">
       <h3 class="text-lg font-medium mb-2" id="stepTitle">Egyeztetés</h3>
@@ -291,11 +291,11 @@
 
 <!-- ARAK — tilt cards -->
 <!-- REFERENCIA — generated demo previews -->
-<section id="referencia" class="py-20 px-5 sm:px-8" style="background:rgba(10,14,26,.93);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="referencia" class="py-20 px-5 sm:px-8">
   <div class="max-w-6xl mx-auto scroll-slide">
-    <span class="mono text-xs" style="color:var(--cyan);">REFERENCIA</span>
-    <h2 class="text-3xl font-semibold mt-3 mb-3">Milyen stílusban gondolkodom</h2>
-    <p class="text-sm mb-10" style="color:var(--text-faint);">Illusztratív koncepció-oldalak — három eltérő vállalkozási profilra tervezve.</p>
+    <span class="mono text-xs" id="cms-referencia_label" style="color:var(--cyan);">REFERENCIA</span>
+    <h2 class="text-3xl font-semibold mt-3 mb-3" id="cms-referencia_heading">Milyen stílusban gondolkodom</h2>
+    <p class="text-sm mb-10" id="cms-referencia_intro" style="color:var(--text-faint);">Illusztratív koncepció-oldalak — három eltérő vállalkozási profilra tervezve.</p>
     <div class="grid sm:grid-cols-3 gap-6" style="perspective:1200px;">
       <div class="browser-card tilt clickable" data-demo="cafe" style="perspective:1000px;">
         <div class="browser-bar">
@@ -304,8 +304,8 @@
         </div>
         <div class="browser-viewport kenburns"><iframe style="width:1280px;height:760px;" title="Café Lumen koncepció" loading="lazy"></iframe></div>
         <div class="p-4">
-          <p class="text-sm font-medium mb-1">Café Lumen</p>
-          <p class="text-xs" style="color:var(--text-soft);">Elegáns, meleg hangulatú kávézó-koncepció</p>
+          <p class="text-sm font-medium mb-1" id="cms-referencia_1_name">Café Lumen</p>
+          <p class="text-xs" id="cms-referencia_1_desc" style="color:var(--text-soft);">Elegáns, meleg hangulatú kávézó-koncepció</p>
         </div>
       </div>
       <div class="browser-card tilt clickable" data-demo="fitness" style="perspective:1000px;">
@@ -315,8 +315,8 @@
         </div>
         <div class="browser-viewport kenburns"><iframe style="width:1280px;height:760px;" title="Pulse Fitness koncepció" loading="lazy"></iframe></div>
         <div class="p-4">
-          <p class="text-sm font-medium mb-1">Pulse Fitness</p>
-          <p class="text-xs" style="color:var(--text-soft);">Bátor, nagy kontrasztú edzőterem-koncepció</p>
+          <p class="text-sm font-medium mb-1" id="cms-referencia_2_name">Pulse Fitness</p>
+          <p class="text-xs" id="cms-referencia_2_desc" style="color:var(--text-soft);">Bátor, nagy kontrasztú edzőterem-koncepció</p>
         </div>
       </div>
       <div class="browser-card tilt clickable" data-demo="beauty" style="perspective:1000px;">
@@ -326,8 +326,8 @@
         </div>
         <div class="browser-viewport kenburns"><iframe style="width:1280px;height:760px;" title="Bloom Beauty koncepció" loading="lazy"></iframe></div>
         <div class="p-4">
-          <p class="text-sm font-medium mb-1">Bloom Beauty</p>
-          <p class="text-xs" style="color:var(--text-soft);">Puha, letisztult szépségszalon-koncepció</p>
+          <p class="text-sm font-medium mb-1" id="cms-referencia_3_name">Bloom Beauty</p>
+          <p class="text-xs" id="cms-referencia_3_desc" style="color:var(--text-soft);">Puha, letisztult szépségszalon-koncepció</p>
         </div>
       </div>
     </div>
@@ -338,8 +338,8 @@
 <!-- KAPCSOLAT -->
 <section id="kapcsolat" class="py-24 px-5 sm:px-8 relative overflow-hidden">
   <div class="max-w-2xl mx-auto text-center scroll-slide relative">
-    <h2 class="text-3xl font-semibold mb-4">Kérjen ingyenes ajánlatot</h2>
-    <p class="text-sm mb-10" style="color:var(--text-soft);">Írja meg, milyen vállalkozásról van szó, és 24 órán belül visszajelzek.</p>
+    <h2 class="text-3xl font-semibold mb-4" id="cms-kapcsolat_heading">Kérjen ingyenes ajánlatot</h2>
+    <p class="text-sm mb-10" id="cms-kapcsolat_subtitle" style="color:var(--text-soft);">Írja meg, milyen vállalkozásról van szó, és 24 órán belül visszajelzek.</p>
     <form class="card p-6 sm:p-8 text-left grid gap-4" id="contactForm">
       <input type="hidden" name="access_key" value="522f9cde-86d1-47ef-aa35-e6c6b13212bc">
       <input type="hidden" name="subject" value="Új ajánlatkérés — WebLift Studio">
@@ -360,7 +360,7 @@
       <p class="text-xs" style="color:var(--text-faint);">A küldéssel elfogadja az <a href="#adatkezeles" style="color:var(--cyan);">adatkezelési tájékoztatót</a>.</p>
       <p class="status text-sm" style="color:var(--cyan);"></p>
     </form>
-    <p class="text-sm mt-8" style="color:var(--text-faint);"><a href="tel:+36302165768" style="color:inherit;text-decoration:underline;">+36 30 216 5768</a> · <a href="mailto:info@webliftstudio.net" style="color:inherit;text-decoration:underline;">info@webliftstudio.net</a></p>
+    <p class="text-sm mt-8" style="color:var(--text-faint);"><a href="tel:+36302165768" id="cms-contact_phone_link" style="color:inherit;text-decoration:underline;"><span id="cms-contact_phone_display">+36 30 216 5768</span></a> · <a href="mailto:info@webliftstudio.net" id="cms-contact_email_link" style="color:inherit;text-decoration:underline;"><span id="cms-contact_email">info@webliftstudio.net</span></a></p>
   </div>
 </section>
 
@@ -379,7 +379,7 @@
 </section>
 
 <footer class="py-8 px-5 sm:px-8 text-center text-sm" style="border-top:1px solid var(--border);color:var(--text-faint);">
-  WebLift Studio © 2026 — Modern weboldal a vállalkozásának
+  <span id="cms-footer_text">WebLift Studio © 2026 — Modern weboldal a vállalkozásának</span>
 </footer>
 
 <script>
@@ -507,7 +507,7 @@
   })();
 
   // Stepper bar — Folyamat
-  const stepData = [
+  window.stepData = [
     { title: 'Egyeztetés', desc: 'Elmondja, mit szeretne, én pedig felmérem a vállalkozása igényeit.' },
     { title: 'Tervezés', desc: 'Megtervezem a vállalkozásához illő, egyedi designt.' },
     { title: 'Fejlesztés', desc: 'AI-alapú fejlesztés, majd közös finomítás az Ön visszajelzései alapján.' },
@@ -528,8 +528,8 @@
     });
     stepPanel.classList.add('fading');
     setTimeout(() => {
-      stepTitle.textContent = stepData[i].title;
-      stepDesc.textContent = stepData[i].desc;
+      stepTitle.textContent = window.stepData[i].title;
+      stepDesc.textContent = window.stepData[i].desc;
       stepPanel.classList.remove('fading');
     }, 200);
   }
@@ -691,6 +691,45 @@ footer{padding:40px 60px;font-size:13px;color:#a68b80;border-top:1px solid #f0dd
   window.addEventListener('load', scaleBrowserPreviews);
   window.addEventListener('resize', scaleBrowserPreviews);
   setTimeout(scaleBrowserPreviews, 300);
+</script>
+
+<!-- === Egyszerű, saját CMS-hidratáció: content.json betöltése és beillesztése === -->
+<script>
+(async function loadCmsContent(){
+  try {
+    const res = await fetch('/content.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const all = await res.json();
+    const data = all.index || {};
+
+    // Általános szöveg-mezők: minden id="cms-<kulcs>" elem textContent-jét frissítjük
+    Object.keys(data).forEach(function(key){
+      const el = document.getElementById('cms-' + key);
+      if (el) el.textContent = data[key];
+    });
+
+    // Speciális esetek, amik nem simán textContent-tel oldhatók meg:
+    if (data.contact_phone_href) {
+      const link = document.getElementById('cms-contact_phone_link');
+      if (link) link.setAttribute('href', 'tel:' + data.contact_phone_href);
+    }
+
+    // Folyamat lépések — a window.stepData tömb felülírása + az aktuálisan látszó (0.) lépés frissítése
+    const stepFields = ['folyamat_step1','folyamat_step2','folyamat_step3','folyamat_step4'];
+    if (window.stepData && stepFields.every(f => data[f + '_title'] || data[f + '_desc'])) {
+      stepFields.forEach((f, i) => {
+        if (data[f + '_title']) window.stepData[i].title = data[f + '_title'];
+        if (data[f + '_desc']) window.stepData[i].desc = data[f + '_desc'];
+      });
+      const stepTitleEl = document.getElementById('stepTitle');
+      const stepDescEl = document.getElementById('stepDesc');
+      if (stepTitleEl) stepTitleEl.textContent = window.stepData[0].title;
+      if (stepDescEl) stepDescEl.textContent = window.stepData[0].desc;
+    }
+  } catch (e) {
+    console.warn('CMS tartalom betöltése sikertelen, marad az alapértelmezett szöveg.', e);
+  }
+})();
 </script>
 </body>
 </html>
